@@ -1,0 +1,49 @@
+{% extends 'store/main.html' %} {% load static %} {% block content %}
+
+<div class="row">
+   {% for product in products%}
+   <div class="col-lg-4">
+      <img class="thumbnail" src="{{product.imageURL }}" />
+      <div class="box-element product">
+         <h6><strong> {{ product.name }} </strong></h6>
+         <hr />
+         <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">
+            Add to cart
+         </button>
+         <a class="btn btn-outline-success" href="{{product.imageURL }}">View</a>
+         <h4 style="float: right">&#8358;{{ product.price }}</h4>
+      </div>
+   </div>
+   {% endfor %}
+</div>
+<footer class="footer_section" style="
+    padding-right: 2%;
+    padding-left: 2%;
+    margin-top: 5%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  ">
+   <p class="footer_text" style="padding-left: 1rem; border-left: 3px solid black">
+      Copyright &copy; 2022 - Sagecorp
+   </p>
+   <div style="margin-top: -5%">
+      <a class="social_icons_items" href="http://github.com/Osagie007">
+         <img src="{% static 'images/github.png' %}" alt="Github Icon" style="width: 20px; height: 20px" />
+         <!-- width: 60px; height: 60px" -->
+      </a>
+      <a class="social_icons_items" href="http://twitter.com/Osagie007">
+         <img src="{% static 'images/twitter.png' %}" alt="Twitter Icon" style="width: 20px; height: 20px" />
+      </a>
+
+      <a class="social_icons_items" href="http://instagram.com/__sagie">
+         <img src="{% static 'images/instagram.png' %}" alt="Instagram Icon" style="width: 20px; height: 20px" />
+         <!--social_icons_items-->
+      </a>
+   </div>
+</footer>
+
+{% endblock content %}
