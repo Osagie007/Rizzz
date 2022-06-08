@@ -1,1 +1,1 @@
-web: gunicorn ECOMMERCE.wsgi --log-file -
+web: gunicorn Rizzz.wsgi --log-file -
